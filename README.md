@@ -3,7 +3,7 @@ Shopping list App written in SwiftUI
 
 Below you can find Russian and English versions / Ниже вы можете найти русскую и английскую версию.
 
-Hello! This is the first full-fledged project written by me on SwiftUI.
+Hi there! This is the first full-fledged project written by me on SwiftUI.
 DO SHOP is a shopping list app written for a wife because her favorite app has been removed from the AppStore.
 The interface contains:
 - button to call the module window to create new list items,
