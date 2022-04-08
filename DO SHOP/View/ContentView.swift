@@ -20,6 +20,7 @@ struct ContentView: View {
      
     var body: some View {
         VStack {
+            NavigationView {
             List {
                 ForEach(listViewModel.items) { item in
                     RawItemView(title: item, number: item, measurement: item, stroken: item)
@@ -44,8 +45,11 @@ struct ContentView: View {
                 // Added Mod to move Item by Func
                 .onMove(perform: listViewModel.moveItem)
             } .listStyle(GroupedListStyle())
-            
-            
+                    .navigationTitle("Let's do shop")
+                    .toolbar {
+                        EditButton().foregroundColor(Color("default"))
+                    }
+            }
             
             // MARK: Start a Button to add an Item
             Button(action: {addNewItem.toggle()}, label: {AddButtonView()})
