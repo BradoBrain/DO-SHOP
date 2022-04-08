@@ -29,37 +29,37 @@ class ListViewModel: ObservableObject {
         self.items = savedItems
     }
     
-    // Deleting Item Function
+    // Deleting item Function
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
     }
     
-    // Move Item Funtion
+    // Moving item Funtion for edit button
     func moveItem(from: IndexSet, to: Int) {
         items.move(fromOffsets: from, toOffset: to)
     }
     
-    // Add new Item Func
-    func addItem(title: String, number: String, isBought: Bool, stroken: Bool, category: String, measurement: String) {
-        let newItem = ItemModel(title: title, number: number, isBought: false, stroken: false, category: category, measurement: measurement)
+    // Function to add new item
+    func addItem(title: String, number: String, isBought: Bool, strikethrough: Bool, category: String, measurement: String) {
+        let newItem = ItemModel(title: title, number: number, isBought: false, strikethrough: false, category: category, measurement: measurement)
         items.append(newItem)
     }
     
-    // Item Status
+    // Function to update item
     func updateItem(item: ItemModel) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index] = item.updateItem()
         }
     }
     
-    // save func
+    // Function to save items
     func saveItems() {
         if let encodedData = try? JSONEncoder().encode(items) {
             UserDefaults.standard.set(encodedData, forKey: itemsKey)
         }
     }
     
-    //markedItem func
+    // Function to change color of items
     func markedItems(categories: String) -> Color {
         switch categories {
         case "Alcohol":

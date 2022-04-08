@@ -12,8 +12,7 @@ struct ItemModel: Identifiable, Codable {
     let title:          String
     let number:         String
     let isBought:       Bool
-    // Test for adding strikethrough
-    let stroken:        Bool
+    let strikethrough:  Bool
     let category:       String
     let measurement:    String
     
@@ -21,7 +20,7 @@ struct ItemModel: Identifiable, Codable {
          title:         String,
          number:        String,
          isBought:      Bool,
-         stroken:       Bool,
+         strikethrough: Bool,
          category:      String,
          measurement:   String
     ) {
@@ -29,13 +28,14 @@ struct ItemModel: Identifiable, Codable {
         self.title          = title
         self.number         = number
         self.isBought       = isBought
-        self.stroken        = stroken
+        self.strikethrough  = strikethrough
         self.category       = category
         self.measurement    = measurement
     }
-    // Func to update an item completion
+    
+    // Function to update an item completion
     func updateItem() -> ItemModel {
-        return ItemModel(id: UUID().uuidString, title: title, number: number, isBought: !isBought, stroken: !stroken, category: category, measurement: measurement)
+        return ItemModel(id: UUID().uuidString, title: title, number: number, isBought: !isBought, strikethrough: !strikethrough, category: category, measurement: measurement)
     }
 
 }

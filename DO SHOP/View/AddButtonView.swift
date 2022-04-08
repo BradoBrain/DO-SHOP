@@ -9,18 +9,18 @@ import SwiftUI
 
 struct AddButtonView: View {
     var body: some View {
-        // Make a button
-            ZStack {
-                
-                Circle()
-                    .frame(width: 60, height: 60)
-                    .foregroundColor(Color("default"))
-                    .shadow(color: .gray, radius: 5)
-                
-                
-                Image(systemName: "plus")
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
+        // Button stile
+        ZStack {
+            
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundColor(Color("default"))
+                .shadow(color: .gray, radius: 5)
+            
+            
+            Image(systemName: "plus")
+                .foregroundColor(.white)
+                .font(.largeTitle)
         }
     }
 }
