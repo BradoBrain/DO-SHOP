@@ -38,48 +38,58 @@ struct AddItemView: View {
                     .cornerRadius(30)
                     .frame(width: UIScreen.main.bounds.width - 20)
                 
-                //Picker for measurement
-                Picker("Measurement",
-                       selection: $measureSelect) {
-                    Text("Pound").tag("lb")
-                    Text("Ounce").tag("oz")
-                    Text("Gram").tag("g")
-                    Text("Kilogram").tag("kg")
-                    Text("Item").tag("item")
-                    Text("Pint").tag("pt")
-                    Text("Litre").tag("l")
-                    Text("Gallon").tag("gal")
-                    Text("Millilitre").tag("ml")
-                }
-                       .pickerStyle(.wheel)
-                       .colorMultiply(.black)
-                
-                //Picker for categories
-                Picker("Categories",
-                       selection: $categorySelect) {
-                    Group {
-                        Text("Alcohol").tag("Alcohol")
-                        Text("Bread & Flour").tag("Bread & Flour")
-                        Text("Drink & Juice").tag("Drink & Juice")
-                        Text("Egg").tag("Egg")
-                        Text("Fish").tag("Fish")
-                        Text("Fruit").tag("Fruit")
-                        Text("Green vagetables").tag("Green vagetables")
-                        Text("Meat").tag("Meat")
-                        Text("None").tag("None")
-                        Text("Milk").tag("Milk")
+                GeometryReader { geometry in
+                    HStack(spacing: 0) {
+                        //Picker for measurement
+                        Picker("Measurement",
+                               selection: $measureSelect) {
+                            Text("Pound").tag("lb")
+                            Text("Ounce").tag("oz")
+                            Text("Gram").tag("g")
+                            Text("Kilogram").tag("kg")
+                            Text("Item").tag("it")
+                            Text("Pint").tag("pt")
+                            Text("Litre").tag("l")
+                            Text("Gallon").tag("gal")
+                            Text("Millilitre").tag("ml")
+                        }
+                               .pickerStyle(.wheel)
+                               .frame(maxWidth: geometry.size.width / 3)
+                               .clipped()
+                        
+                        Divider()
+                            .frame(height: 150)
+                        
+                        //Picker for categories
+                        Picker("Categories",
+                               selection: $categorySelect) {
+                            Group {
+                                Text("Alcohol").tag("Alcohol")
+                                Text("Bread & Flour").tag("Bread & Flour")
+                                Text("Drink & Juice").tag("Drink & Juice")
+                                Text("Egg").tag("Egg")
+                                Text("Fish").tag("Fish")
+                                Text("Fruit").tag("Fruit")
+                                Text("Green vagetables").tag("Green vagetables")
+                                Text("Meat").tag("Meat")
+                                Text("None").tag("None")
+                                Text("Milk").tag("Milk")
+                            }
+                            Group {
+                                Text("Mushrooms").tag("Mushrooms")
+                                Text("Nuts, Seeds & Cereals").tag("Nuts, Seeds & Cereals")
+                                Text("Fat & Oil").tag("Fat & Oil")
+                                Text("Seafood").tag("Seafood")
+                                Text("Soy").tag("Soy")
+                                Text("Sweets & Candy").tag("Sweets & Candy")
+                                Text("Vagetables").tag("Vagetables")
+                            }
+                        }
+                               .pickerStyle(.wheel)
+                               .frame(maxWidth: geometry.size.width / 1.5)
+                               .clipped()
                     }
-                    Group {
-                        Text("Mushrooms").tag("Mushrooms")
-                        Text("Nuts, Seeds & Cereals").tag("Nuts, Seeds & Cereals")
-                        Text("Fat & Oil").tag("Fat & Oil")
-                        Text("Seafood").tag("Seafood")
-                        Text("Soy").tag("Soy")
-                        Text("Sweets & Candy").tag("Sweets & Candy")
-                        Text("Vagetables").tag("Vagetables")
-                    }
-                }
-                       .pickerStyle(.wheel)
+                } .frame(height: 200)
                 
                 // Button to save a new item and close the AddItemView
                 Button(action: {

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ContentView1.swift
 //  DO SHOP
 //
 //  Created by Artem Vinogradov on 08.04.2022.
@@ -20,7 +20,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            NavigationView {
+
                 List {
                     ForEach(listViewModel.items) { item in
                         RawItemView(title: item, number: item, measurement: item, strikethrough: item)
@@ -44,11 +44,11 @@ struct ContentView: View {
                     // Moving function
                     .onMove(perform: listViewModel.moveItem)
                 } .listStyle(GroupedListStyle())
-                    .navigationTitle("Let's do shop").foregroundColor(.white)
+                .navigationTitle("Shoping List").foregroundColor(.white)
                     .toolbar {
                         EditButton().foregroundColor(Color("default"))
                     }
-            }
+            
             
             // Button to create a new item
             Button(action: {addNewItem.toggle()}, label: {AddButtonView()})
