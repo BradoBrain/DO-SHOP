@@ -14,21 +14,20 @@ struct RawItemView: View {
     @State var strikethrough:   ItemModel
     
     var body: some View {
-            HStack {
-                Text(title.title)
-                    .strikethrough(strikethrough.strikethrough, color: Color("default"))
-                    .padding(.horizontal)
-
-                Spacer()
-
-                Text(number.number)
-                    .strikethrough(strikethrough.strikethrough, color: Color("default"))
-
-                Text(measurement.measurement)
-                    .strikethrough(strikethrough.strikethrough, color: Color("default"))
-                    .padding(.horizontal, 18)
-            }
-            .padding(.vertical, 6)
+        HStack {
+            Text(title.title)
+                .strikethrough(strikethrough.strikethrough, color: Color("default"))
+                .padding(.horizontal)
+            
+            Spacer()
+            
+            Text(number.number)
+                .strikethrough(strikethrough.strikethrough, color: Color("default"))
+            
+            Text(measurement.measurement)
+                .strikethrough(strikethrough.strikethrough, color: Color("default"))
+                .padding(.horizontal, 18)
+        } .padding(.vertical, 6)
     }
 }
 

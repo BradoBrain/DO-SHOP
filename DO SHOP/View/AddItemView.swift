@@ -24,6 +24,7 @@ struct AddItemView: View {
     var body: some View {
         ZStack {
             Color("background").ignoresSafeArea()
+            
             VStack {
                 // Field to enter a name of item
                 TextField("What do you want?", text: $itemName).padding()
