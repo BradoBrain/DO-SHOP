@@ -12,14 +12,14 @@ struct AddItemView: View {
     
     @EnvironmentObject var listViewModel: ListViewModel
     
-    @State var itemName: String         = ""
-    @State var itemNum: String          = ""
+    @State var itemName: String                 = ""
+    @State var itemNum: String                  = ""
     // For Alert
-    @State var alertText                = ""
-    @State var showAlert                = false
+    @State var alertText: LocalizedStringKey    = ""
+    @State var showAlert                        = false
     // For Pickers
-    @State var measureSelect: String    = "item"
-    @State var categorySelect: String   = "None"
+    @State var measureSelect: String            = "it"
+    @State var categorySelect: String           = "None"
     
     var body: some View {
         ZStack {
@@ -27,13 +27,13 @@ struct AddItemView: View {
             
             VStack {
                 // Field to enter a name of item
-                TextField("What do you want?", text: $itemName).padding()
+                TextField(LocalizedStringKey("What would you like to buy?"), text: $itemName).padding()
                     .background()
                     .cornerRadius(30)
                     .frame(width: UIScreen.main.bounds.width - 20)
                 
                 // Field to enter a number of item
-                TextField("How many do you want?", text: $itemNum).keyboardType(.decimalPad)
+                TextField(LocalizedStringKey("How many would you like?"), text: $itemNum).keyboardType(.decimalPad)
                     .padding()
                     .background()
                     .cornerRadius(30)
@@ -44,15 +44,15 @@ struct AddItemView: View {
                         //Picker for measurement
                         Picker("Measurement",
                                selection: $measureSelect) {
-                            Text("Pound").tag("lb")
-                            Text("Ounce").tag("oz")
-                            Text("Gram").tag("g")
-                            Text("Kilogram").tag("kg")
-                            Text("Item").tag("it")
-                            Text("Pint").tag("pt")
-                            Text("Litre").tag("l")
-                            Text("Gallon").tag("gal")
-                            Text("Millilitre").tag("ml")
+                            Text(LocalizedStringKey("Pound")).tag("lb")
+                            Text(LocalizedStringKey("Ounce")).tag("oz")
+                            Text(LocalizedStringKey("Gram")).tag("g")
+                            Text(LocalizedStringKey("Kilogram")).tag("kg")
+                            Text(LocalizedStringKey("Item")).tag("it")
+                            Text(LocalizedStringKey("Pint")).tag("pt")
+                            Text(LocalizedStringKey("Litre")).tag("l")
+                            Text(LocalizedStringKey("Gallon")).tag("gal")
+                            Text(LocalizedStringKey("Millilitre")).tag("ml")
                         }
                                .pickerStyle(.wheel)
                                .frame(maxWidth: geometry.size.width / 3)
@@ -65,25 +65,25 @@ struct AddItemView: View {
                         Picker("Categories",
                                selection: $categorySelect) {
                             Group {
-                                Text("Alcohol").tag("Alcohol")
-                                Text("Bread & Flour").tag("Bread & Flour")
-                                Text("Drink & Juice").tag("Drink & Juice")
-                                Text("Egg").tag("Egg")
-                                Text("Fish").tag("Fish")
-                                Text("Fruit").tag("Fruit")
-                                Text("Green vagetables").tag("Green vagetables")
-                                Text("Meat").tag("Meat")
-                                Text("None").tag("None")
-                                Text("Milk").tag("Milk")
+                                Text(LocalizedStringKey("Alcohol")).tag("Alcohol")
+                                Text(LocalizedStringKey("Bread & Flour")).tag("Bread & Flour")
+                                Text(LocalizedStringKey("Drink & Juice")).tag("Drink & Juice")
+                                Text(LocalizedStringKey("Egg")).tag("Egg")
+                                Text(LocalizedStringKey("Fish")).tag("Fish")
+                                Text(LocalizedStringKey("Fruit")).tag("Fruit")
+                                Text(LocalizedStringKey("Green vagetables")).tag("Green vagetables")
+                                Text(LocalizedStringKey("Meat")).tag("Meat")
+                                Text(LocalizedStringKey("None")).tag("None")
+                                Text(LocalizedStringKey("Milk")).tag("Milk")
                             }
                             Group {
-                                Text("Mushrooms").tag("Mushrooms")
-                                Text("Nuts, Seeds & Cereals").tag("Nuts, Seeds & Cereals")
-                                Text("Fat & Oil").tag("Fat & Oil")
-                                Text("Seafood").tag("Seafood")
-                                Text("Soy").tag("Soy")
-                                Text("Sweets & Candy").tag("Sweets & Candy")
-                                Text("Vagetables").tag("Vagetables")
+                                Text(LocalizedStringKey("Mushrooms")).tag("Mushrooms")
+                                Text(LocalizedStringKey("Nuts, Seeds & Cereals")).tag("Nuts, Seeds & Cereals")
+                                Text(LocalizedStringKey("Fat & Oil")).tag("Fat & Oil")
+                                Text(LocalizedStringKey("Seafood")).tag("Seafood")
+                                Text(LocalizedStringKey("Soy")).tag("Soy")
+                                Text(LocalizedStringKey("Sweets & Candy")).tag("Sweets & Candy")
+                                Text(LocalizedStringKey("Vagetables")).tag("Vagetables")
                             }
                         }
                                .pickerStyle(.wheel)
@@ -106,7 +106,7 @@ struct AddItemView: View {
                             .padding(4)
                             .shadow(color: .gray, radius: 5, y: 7)
                         
-                        Text("SAVE")
+                        Text(LocalizedStringKey("SAVE"))
                             .foregroundColor(.white)
                             .font(.title2)
                     }

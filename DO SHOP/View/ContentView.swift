@@ -52,7 +52,7 @@ struct ContentView: View {
                 .onMove(perform: listViewModel.moveItem)
             }
             .listStyle(GroupedListStyle())
-            .navigationTitle("Shoping List").foregroundColor(.white)
+            .navigationTitle(LocalizedStringKey("Shoping List")).foregroundColor(.white)
             .toolbar { EditButton().foregroundColor(Color("default")) }
             
             

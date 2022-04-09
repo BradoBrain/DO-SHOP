@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  DO SHOP
+
+  Created by Artem Vinogradov on 09.04.2022.
+  
+*/
+"Shoping List"                  = "Shoping List";
+"What would you like to buy?"   = "What would you like to buy?";
+"How many would you like?"      = "How many would you like?";
+"Pound"                         = "Pound";
+"Ounce"                         = "Ounce";
+"Gram"                          = "Gram";
+"Kilogram"                      = "Kilogram";
+"Item"                          = "Item";
+"Pint"                          = "Pint";
+"Litre"                         = "Litre";
+"Gallon"                        = "Gallon";
+"Millilitre"                    = "Millilitre";
+"Alcohol"                       = "Alcohol";
+"Bread & Flour"                 = "Bread & Flour";
+"Drink & Juice"                 = "Drink & Juice";
+"Egg"                           = "Egg";
+"Fish"                          = "Fish";
+"Fruit"                         = "Fruit";
+"Green vagetables"              = "Green vagetables";
+"Meat"                          = "Meat";
+"None"                          = "None";
+"Milk"                          = "Milk";
+"Mushrooms"                     = "Mushrooms";
+"Nuts, Seeds & Cereals"         = "Nuts, Seeds & Cereals";
+"Fat & Oil"                     = "Fat & Oil";
+"Seafood"                       = "Seafood";
+"Soy"                           = "Soy";
+"Sweets & Candy"                = "Sweets & Candy";
+"Vagetables"                    = "Vagetables";
+"SAVE"                          = "SAVE";
+"Enter a Data"                  = "Enter a Data";

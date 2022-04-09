@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  DO SHOP
+
+  Created by Artem Vinogradov on 09.04.2022.
+  
+*/
+"Shoping List"                  = "Ну що? Скупимось?";
+"What would you like to buy?"   = "Що ви хочете купити?";
+"How many would you like?"      = "Скільки ви хочете";
+"Pound"                         = "Фунт";
+"Ounce"                         = "Унція";
+"Gram"                          = "Грам";
+"Kilogram"                      = "Кілограм";
+"Item"                          = "Штуки";
+"Pint"                          = "Пінта";
+"Litre"                         = "Літр";
+"Gallon"                        = "Галон";
+"Millilitre"                    = "Мілілітр";
+"Alcohol"                       = "Алкоголь";
+"Bread & Flour"                 = "Хліб і борошно";
+"Drink & Juice"                 = "Напої та соки";
+"Egg"                           = "Яйце";
+"Fish"                          = "Риба";
+"Fruit"                         = "Фрукти";
+"Green vagetables"              = "Зелень";
+"Meat"                          = "М'ясо";
+"None"                          = "Не вибрано";
+"Milk"                          = "Молоко";
+"Mushrooms"                     = "Гриби";
+"Nuts, Seeds & Cereals"         = "Горіхи, насіння та злаки";
+"Fat & Oil"                     = "Жири та олії";
+"Seafood"                       = "Морепродукти";
+"Soy"                           = "Соєвий продукт";
+"Sweets & Candy"                = "Солодощі та цукерки";
+"Vagetables"                    = "Овочі";
+"SAVE"                          = "ЗБЕРЕГТИ";
+"Enter a Data"                  = "Введіть дані";

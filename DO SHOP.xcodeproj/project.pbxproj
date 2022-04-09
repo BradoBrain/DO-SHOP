@@ -16,6 +16,7 @@
 		0F05A44728008D1000E6B801 /* RawItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05A44628008D1000E6B801 /* RawItemView.swift */; };
 		0F05A44928008D3800E6B801 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05A44828008D3800E6B801 /* AddItemView.swift */; };
 		0F87DA732800CF4800E63AC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F87DA722800CF4800E63AC5 /* ContentView.swift */; };
+		0FDB0187280205F20057860B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB0186280205980057860B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		0F05A44628008D1000E6B801 /* RawItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawItemView.swift; sourceTree = "<group>"; };
 		0F05A44828008D3800E6B801 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		0F87DA722800CF4800E63AC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0FDB0185280205980057860B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0FDB01882802061F0057860B /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 				0F05A43E28008BBD00E6B801 /* ViewModel */,
 				0F05A43D28008BB300E6B801 /* Model */,
 				0F05A43F28008BCA00E6B801 /* View */,
+				0FDB0181280205580057860B /* Localization */,
 				0F05A43328008A4E00E6B801 /* Assets.xcassets */,
 				0F05A43528008A4E00E6B801 /* Preview Content */,
 			);
@@ -104,6 +108,14 @@
 				0F05A44828008D3800E6B801 /* AddItemView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0FDB0181280205580057860B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB0186280205980057860B /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +160,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 0F05A42328008A4A00E6B801;
 			productRefGroup = 0F05A42D28008A4A00E6B801 /* Products */;
@@ -165,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F05A43728008A4E00E6B801 /* Preview Assets.xcassets in Resources */,
+				0FDB0187280205F20057860B /* Localizable.strings in Resources */,
 				0F05A43428008A4E00E6B801 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,11 +202,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		0FDB0186280205980057860B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FDB0185280205980057860B /* en */,
+				0FDB01882802061F0057860B /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		0F05A43828008A4E00E6B801 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -253,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -314,6 +342,7 @@
 				DEVELOPMENT_TEAM = BBY7AP2J7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DO-SHOP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -343,6 +372,7 @@
 				DEVELOPMENT_TEAM = BBY7AP2J7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DO-SHOP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
