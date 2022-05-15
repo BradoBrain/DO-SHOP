@@ -15,7 +15,7 @@ struct AddButtonView: View {
             Circle()
                 .frame(width: 60, height: 60)
                 .foregroundColor(Color("bread"))
-                .shadow(color: .gray, radius: 5)
+                //.shadow(color: .gray, radius: 5)
             
             
             Image(systemName: "plus")

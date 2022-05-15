@@ -104,7 +104,7 @@ struct AddItemView: View {
                             .foregroundColor(Color("bread"))
                             .frame(width: UIScreen.main.bounds.width - 20, height: 50)
                             .padding(4)
-                            .shadow(color: .gray, radius: 5, y: 7)
+                            //.shadow(color: .gray, radius: 5, y: 7)
                         
                         Text(LocalizedStringKey("SAVE"))
                             .foregroundColor(.white)
