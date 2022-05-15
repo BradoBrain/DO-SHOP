@@ -11,38 +11,39 @@ struct ContentView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     @State private var addNewItem = false
-    @State private var strikethrough = false
     
     init() {
         // Background of ListView
         UITableView.appearance().backgroundColor = UIColor(Color("background"))
         // Color of navigationTitle Large
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("default"))]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("bread"))]
         // Color of navigationTitle Inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color("default"))]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color("bread"))]
     }
     
     var body: some View {
         VStack {
+            ZStack {
             List {
-                ForEach(listViewModel.items) { item in
-                    RawItemView(title: item, number: item, measurement: item, strikethrough: item)
+                ForEach(listViewModel.sortedItem) { item in
+                    RawItemView(title: item, number: item, measurement: item, sorter: item)
+
                     
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color("background"))
-                        .padding(10)
+                        .padding(20)
                         .background(item.isBought ? Color("finished") : listViewModel.markedItems(categories: item.category))
                         .clipShape(RoundedRectangle(cornerRadius: 30))
-                        .padding(.vertical, 5)
-                        .shadow(color: .gray, radius: 5, x: 5, y: 5)
+                        .padding(.vertical, 0)
+                        //.shadow(color: .gray, radius: 5, x: 0, y: 5)
                     
                     // Function to change item status
                         .onTapGesture {
-                            withAnimation(.interpolatingSpring(mass: 1, stiffness: 100, damping: 10, initialVelocity: 0)) {
-                                self.strikethrough.toggle()
+                            withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
                                 listViewModel.updateItem(item: item)
                             }
                         }
+                    
                     
                 } // End of ForEach body
                 
@@ -51,17 +52,19 @@ struct ContentView: View {
                 // Moving function
                 .onMove(perform: listViewModel.moveItem)
             }
-            .listStyle(GroupedListStyle())
+            .listStyle(PlainListStyle())
             .navigationTitle(LocalizedStringKey("Shoping List")).foregroundColor(.white)
             .toolbar { EditButton().foregroundColor(Color("default")) }
-            
-            
+                VStack {
+            Spacer()
             // Button to create a new item
             Button(action: {addNewItem.toggle()}, label: {AddButtonView()})
                 .sheet(isPresented: $addNewItem) {
                     NavigationView { AddItemView() }
                 }
+                }
         } .background(Color("background"))
+        }
     }
 }
 
@@ -69,6 +72,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.light)
             .previewDevice("iPhone 12")
             .environmentObject(ListViewModel())
     }

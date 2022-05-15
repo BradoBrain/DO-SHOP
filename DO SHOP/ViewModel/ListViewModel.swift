@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 class ListViewModel: ObservableObject {
+    
+    
     @Published var items: [ItemModel] = [] {
         didSet {
             saveItems()
@@ -29,6 +31,16 @@ class ListViewModel: ObservableObject {
         self.items = savedItems
     }
     
+    
+    var sortedItem: [ItemModel] {
+        get {
+            items.sorted(by: { $0.sorter > $1.sorter })
+        }
+        set {
+            items = newValue
+        }
+    }
+    
     // Deleting item Function
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
@@ -40,8 +52,8 @@ class ListViewModel: ObservableObject {
     }
     
     // Function to add new item
-    func addItem(title: String, number: String, isBought: Bool, strikethrough: Bool, category: String, measurement: String) {
-        let newItem = ItemModel(title: title, number: number, isBought: false, strikethrough: false, category: category, measurement: measurement)
+    func addItem(title: String, number: String, isBought: Bool, category: String, measurement: String, sorter: Int) {
+        let newItem = ItemModel(title: title, number: number, isBought: false, category: category, measurement: measurement, sorter: sorter)
         items.append(newItem)
     }
     
@@ -98,4 +110,5 @@ class ListViewModel: ObservableObject {
             return Color("default")
         }
     }
+
 }

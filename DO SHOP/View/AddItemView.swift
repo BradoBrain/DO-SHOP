@@ -101,7 +101,7 @@ struct AddItemView: View {
                 }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
-                            .foregroundColor(Color("default"))
+                            .foregroundColor(Color("bread"))
                             .frame(width: UIScreen.main.bounds.width - 20, height: 50)
                             .padding(4)
                             .shadow(color: .gray, radius: 5, y: 7)
@@ -119,7 +119,7 @@ struct AddItemView: View {
     
     // Add a new item
     func saveButtonPressed() {
-        listViewModel.addItem(title: itemName, number: itemNum, isBought: false, strikethrough: false, category: categorySelect, measurement: measureSelect)
+        listViewModel.addItem(title: itemName, number: itemNum, isBought: false, category: categorySelect, measurement: measureSelect, sorter: 1)
         
     }
     
